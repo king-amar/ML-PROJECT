@@ -301,7 +301,7 @@ elif choice == "🤖 Model Training":
         with col1:
             test_size = st.slider("Test Size (%)", 10, 30, 20, 1) / 100
         with col2:
-            random_state = st.number_input("Random State", value=42, min_value=0, max_value=100)
+            random_state = st.number_input("Random State", value=42, min_value=0, max_value=250)
         
         # Prepare features and target
         if 'Label' in df.columns:
@@ -621,4 +621,5 @@ elif choice == "📈 Model Comparison":
         st.plotly_chart(fig, use_container_width=True)
         
     else:
+
         st.warning("⚠️ No model results available. Please train models first.")
